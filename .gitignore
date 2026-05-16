@@ -6,6 +6,11 @@
 .cache
 dist
 
+# AI Tools
+.refact/
+.cursor/
+.windsurf/
+
 # Node dependencies
 node_modules
 
