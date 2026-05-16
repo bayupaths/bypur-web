@@ -1,0 +1,4 @@
+# Server API routes (Nitro)
+# Docs: https://nuxt.com/docs/4.x/directory-structure/server
+# Example: profile.get.ts → GET /api/profile
+#          projects.get.ts → GET /api/projects

@@ -1,0 +1,2 @@
+# Processed images (will be optimized by Vite/webpack)
+# Use public/images/ for static assets that don't need processing

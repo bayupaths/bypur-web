@@ -1,0 +1,3 @@
+# Shared utility functions
+# Accessible in both app/ and server/
+# Example: formatDate.ts, slugify.ts

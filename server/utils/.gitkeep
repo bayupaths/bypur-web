@@ -1,0 +1,3 @@
+# Server utility functions
+# Auto-imported in server/api/ and server/routes/
+# Example: db.ts, validateBody.ts
