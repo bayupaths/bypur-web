@@ -1,14 +1,19 @@
 import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// Environment-based devtools configuration
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
-  devtools: { enabled: true },
+  devtools: { enabled: !isProduction },
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
   },
   app: {
+    baseURL: '/',
+    buildAssetsDir: '/_nuxt/',
     head: {
       htmlAttrs: { class: "dark" },
       meta: [
@@ -61,10 +66,8 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxtjs/google-fonts"],
   runtimeConfig: {
-    // Server-only (private) — not exposed to client
     apiKey: '',
     public: {
-      // Set NUXT_PUBLIC_API_BASE=https://youradmin.com in .env to fetch live data
       apiBase: '',
     },
   },
