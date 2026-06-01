@@ -5,7 +5,6 @@
     <SectionsSkillsSection />
     <SectionsProjectsSection />
     <SectionsExperienceSection />
-    <SectionsEducationSection />
     <SectionsContactSection />
   </main>
 </template>

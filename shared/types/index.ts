@@ -13,7 +13,7 @@ export interface Project {
 
 export interface Skill {
   name: string
-  category: 'frontend' | 'backend' | 'tools' | 'other'
+  category: 'frontend' | 'backend' | 'tools' | 'ai' | 'other'
   icon?: string
 }
 
@@ -22,17 +22,32 @@ export interface Experience {
   company: string
   role: string
   period: string
+  location?: string
+  type?: string
   description: string[]
   techStack?: string[]
 }
 
-export interface Education {
-  id: number
-  institution: string
-  degree: string
-  field: string
-  period: string
-  description?: string
+export interface Service {
+  title: string
+  slug: string
+  description: string
+  /** Iconify format, e.g. 'i-logos-vuejs' or 'logos:vuejs' */
+  icon?: string
+  priceFrom?: number | null
+  isActive?: boolean
+}
+
+export interface ProfileStat {
+  value: string
+  label: string
+}
+
+export interface ProfileHighlight {
+  /** Label shown on the badge (omit for icon-only dot) */
+  label?: string
+  /** Key into the client-side icon map, e.g. 'Server', 'Code2', 'Database' */
+  icon: string
 }
 
 export interface Profile {
@@ -42,10 +57,17 @@ export interface Profile {
   email: string
   location: string
   avatar: string
+  phone?: string
+  resumeUrl?: string
+  roles?: string[]
+  techStack?: string[]
+  stats?: ProfileStat[]
+  highlights?: ProfileHighlight[]
   socials: {
     github?: string
     linkedin?: string
     twitter?: string
     instagram?: string
+    whatsapp?: string
   }
 }
