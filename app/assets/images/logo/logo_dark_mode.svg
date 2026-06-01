@@ -1,0 +1,13 @@
+<svg width="100%" viewBox="0 0 520 210" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>by.pur_ logo</title>
+  <desc>Developer brand logo with terminal aesthetic</desc>
+
+  <rect width="520" height="210" fill="#09090B" rx="12"/>
+
+  <text
+    x="40" y="155"
+    font-family="'Geist Mono', 'Courier New', monospace"
+    font-weight="700"
+    font-size="88"
+  ><tspan fill="#3B82F6">&gt;</tspan><tspan fill="#F3F4F6">by.pur</tspan><tspan fill="#3B82F6">_</tspan></text>
+</svg>

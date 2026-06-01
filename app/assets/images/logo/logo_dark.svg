@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+    <rect width="512" height="512" rx="110" fill="#09090B"/>
+    <style>
+        .text-main { font-family: 'Geist Mono', 'Courier New', Courier, monospace; font-size: 190px; fill: #F3F4F6; font-weight: bold; }
+        .accent { font-family: 'Geist Mono', 'Courier New', Courier, monospace; font-size: 190px; fill: #3B82F6; font-weight: 900; }
+    </style>
+    <g transform="translate(35, 325)">
+        <text class="accent">&gt;</text>
+        <text class="text-main" x="140" y="0">by</text>
+        <text class="accent" x="350" y="0">_</text>
+    </g>
+</svg>

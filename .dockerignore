@@ -1,0 +1,22 @@
+# Build outputs
+.output
+.nuxt
+.nitro
+.cache
+dist
+
+# Dependencies
+node_modules
+
+# Dev tools
+.git
+.refact
+.cursor
+.windsurf
+
+# Environment
+.env
+
+# Logs
+*.log
+logs/
