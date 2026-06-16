@@ -6,7 +6,6 @@ Personal portfolio website showcasing my work as a **Backend & Systems Engineer*
 ![React](https://img.shields.io/badge/React-19-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8)
-
 [![CI Pipeline](https://github.com/bayupaths/bypur-web/actions/workflows/ci.yml/badge.svg)](https://github.com/bayupaths/bypur-web/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/bayupaths/bypur-web/actions/workflows/codeql.yml/badge.svg)](https://github.com/bayupaths/bypur-web/actions/workflows/codeql.yml)
 
