@@ -1,26 +1,223 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Colors */
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-card: var(--bg-card);
+  --color-border: var(--border);
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-fg: var(--accent-fg);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-muted: var(--secondary-muted);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Spacing */
+  --spacing-section: 6rem;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Max-width */
+  --max-width-container: 68rem;
+
+  /* Border radius */
+  --radius: 0.5rem;
+  --radius-sm: 0.375rem;
+
+  /* Shadows - minimal */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 0.5s ease both;
+
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-float-slow: float 6s ease-in-out infinite;
+  --animate-float-slower: float 8s ease-in-out 1s infinite;
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-1);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Design Tokens: Light (Navy + Cyan palette) ─── */
+:root {
+  --bg: #F8FAFC;
+  --bg-subtle: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --border: #CBD5E1;
+
+  --text-1: #1E293B;
+  --text-2: #475569;
+  --text-3: #94A3B8;
+
+  --accent: #032448;
+  --accent-hover: #021A35;
+  --accent-muted: #DBEAFE;
+  --accent-fg: #FFFFFF;
+
+  --secondary: #0EA5E9;
+  --secondary-hover: #0284C7;
+  --secondary-muted: #E0F2FE;
+}
+
+/* ─── Design Tokens: Dark ─── */
+.dark {
+  --bg: #0F172A;
+  --bg-subtle: #1E293B;
+  --bg-card: #1E293B;
+  --border: #334155;
+
+  --text-1: #F1F5F9;
+  --text-2: #CBD5E1;
+  --text-3: #64748B;
+
+  --accent: #0A4A7A;
+  --accent-hover: #0D6AAD;
+  --accent-muted: #1E3A8A;
+  --accent-fg: #F8FAFC;
+
+  --secondary: #38BDF8;
+  --secondary-hover: #7DD3FC;
+  --secondary-muted: #082F49;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-3);
+}
+
+/* ─── Focus ring ─── */
+:focus-visible {
+  outline: 1px solid var(--text-1);
+  outline-offset: 3px;
+}
+
+/* ─── Utility layers ─── */
+@layer utilities {
+  .container-main {
+    width: 100%;
+    max-width: var(--max-width-container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-main {
+      padding-inline: 2rem;
+    }
+  }
+
+  .section-padding {
+    padding-block: var(--spacing-section);
+  }
+
+  /* Minimal label */
+  .mono-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    font-weight: 500;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ─── Responsive orbit animations ─── */
+@media (max-width: 640px) {
+  @keyframes orbit-1 {
+    0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+
+  @keyframes orbit-2 {
+    0% { transform: rotate(90deg) translateX(100px) rotate(-90deg); }
+    100% { transform: rotate(450deg) translateX(100px) rotate(-450deg); }
+  }
+
+  @keyframes orbit-3 {
+    0% { transform: rotate(180deg) translateX(130px) rotate(-180deg); }
+    100% { transform: rotate(540deg) translateX(130px) rotate(-540deg); }
+  }
+
+  @keyframes orbit-4 {
+    0% { transform: rotate(270deg) translateX(130px) rotate(-270deg); }
+    100% { transform: rotate(630deg) translateX(130px) rotate(-630deg); }
+  }
+
+  @keyframes orbit-5 {
+    0% { transform: rotate(45deg) translateX(160px) rotate(-45deg); }
+    100% { transform: rotate(405deg) translateX(160px) rotate(-405deg); }
+  }
+
+  @keyframes orbit-6 {
+    0% { transform: rotate(135deg) translateX(160px) rotate(-135deg); }
+    100% { transform: rotate(495deg) translateX(160px) rotate(-495deg); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
