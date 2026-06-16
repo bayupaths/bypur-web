@@ -1,36 +1,191 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bayu Purnomo - Portfolio
 
-## Getting Started
+Personal portfolio website showcasing my work as a **Backend & Systems Engineer**.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16.2.9-black)
+![React](https://img.shields.io/badge/React-19-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8)
+
+> Built with modern tech stack: Next.js 16, React 19, TypeScript, and Tailwind CSS v4
+
+## ✨ Features
+
+- 🎨 **Modern Design** - Clean & minimalist interface
+- 🌗 **Dark Mode** - System-based theme switching
+- 📱 **Responsive** - Mobile-first design approach
+- ⚡ **Fast Performance** - Optimized with Next.js SSR/SSG
+- 🎭 **Smooth Animations** - Framer Motion interactions
+- 📊 **Portfolio Showcase** - Projects, skills, and experience
+- 📧 **Contact Form** - Easy way to get in touch
+- ♿ **Accessible** - WCAG compliant
+
+## 🚀 Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
+# Open http://localhost:3000
+
+# Build for production
+pnpm build
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Frontend:**
+- Next.js 16.2.9 (App Router)
+- React 19 with Server Components
+- TypeScript 5
+- Tailwind CSS v4
+- Framer Motion 12
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Development:**
+- Jest & React Testing Library
+- Playwright for E2E testing
+- ESLint for code quality
+- pnpm for package management
 
-## Learn More
+**Deployment:**
+- Docker containerization
+- Nginx reverse proxy
+- CI/CD automation
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+bypur-app/
+├── app/                   # Next.js App Router
+│   ├── page.tsx           # Home page
+│   ├── layout.tsx         # Root layout
+│   └── api/               # API routes
+├── components/            # React components
+│   ├── layout/           # Header, Footer
+│   ├── sections/         # Page sections (Hero, About, Projects, etc.)
+│   └── ui/               # Reusable UI components
+├── lib/                   # Core library
+│   ├── data/             # Portfolio content (edit here!)
+│   │   ├── profile.ts    # Personal info
+│   │   ├── projects.ts   # Your projects
+│   │   ├── skills.ts     # Tech skills
+│   │   └── experiences.ts # Work history
+│   └── types.ts          # TypeScript types
+├── __tests__/            # Tests
+└── public/               # Static assets
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Customize Content
 
-## Deploy on Vercel
+Edit portfolio content di folder `lib/data/`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```typescript
+// lib/data/profile.ts - Update personal info
+export const profile = {
+  name: "Bayu Purnomo",
+  title: "Backend & Systems Engineer",
+  email: "bayupurnomo.dev@gmail.com",
+  // ... edit sesuai kebutuhan
+};
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+// lib/data/projects.ts - Add your projects
+export const projects = [
+  {
+    title: "Your Project",
+    description: "Project description",
+    techStack: ["Next.js", "TypeScript"],
+    // ...
+  },
+];
+```
+
+## 🧪 Testing
+
+```bash
+# Run tests
+pnpm test
+
+# Watch mode
+pnpm test:watch
+
+# Coverage
+pnpm test:coverage
+```
+
+**Test Stats:** 98 tests passing across unit, integration, and E2E tests.
+
+## 📦 Deployment
+
+Deployed menggunakan Docker dengan CI/CD automation.
+
+```bash
+# Docker deployment
+pnpm docker:up
+
+# Manual deployment
+pnpm build
+pnpm start
+```
+
+## 💻 Development
+
+**Local Development:**
+```bash
+# Start development server
+pnpm dev
+
+# Run tests while coding
+pnpm test:watch
+
+# Check code quality
+pnpm lint
+```
+
+**Before Committing:**
+```bash
+pnpm lint    # ✅ Code quality check
+pnpm test    # ✅ Run all tests
+pnpm build   # ✅ Ensure build works
+```
+
+## 📝 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start development server |
+| `pnpm build` | Build for production |
+| `pnpm start` | Start production server |
+| `pnpm lint` | Check code quality |
+| `pnpm test` | Run all tests |
+| `pnpm test:watch` | Test watch mode |
+| `pnpm test:coverage` | Test coverage report |
+| `pnpm docker:up` | Start with Docker |
+| `pnpm docker:down` | Stop Docker containers |
+
+## 🛠️ Built With
+
+- **Next.js 16** - React framework with App Router
+- **React 19** - Latest React with Server Components
+- **TypeScript** - Type-safe development
+- **Tailwind CSS v4** - Utility-first styling
+- **Framer Motion** - Smooth animations
+- **Jest & Playwright** - Comprehensive testing
+- **Docker** - Containerized deployment
+- **Jenkins** - CI/CD automation
+
+## 📄 License
+
+Personal portfolio © 2026 Bayu Purnomo
+
+## 📧 Contact
+
+- **Email**: bayupurnomo.dev@gmail.com
+- **GitHub**: [@bayupaths](https://github.com/bayupaths)
+- **LinkedIn**: [Bayu Purnomo](https://www.linkedin.com/in/bayupaths)
+
+---
+
+Built with ❤️ by Bayu Purnomo
